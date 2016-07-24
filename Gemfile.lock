@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     daemons (1.1.9)
-    eventmachine (1.0.3)
+    eventmachine (1.2.0.1)
     mime-types (2.4.3)
     netrc (0.8.0)
     rack (1.5.2)
