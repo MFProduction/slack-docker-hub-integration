@@ -1,6 +1,11 @@
 Docker Hub build notifications for Slack
 ========================================
 
+[![Docker Hub Widget]][Docker Hub]
+
+[Docker Hub]: https://hub.docker.com/r/wikiwi/slack-docker-hub-integration
+[Docker Hub Widget]: https://img.shields.io/docker/pulls/wikiwi/slack-docker-hub-integration.svg
+
 A tiny Sinatra app that receives webhooks from Docker Hub and re-posts them as Slack formatted hooks.
 
 There is a running version of this code on Heroku that you are welcome to use...
