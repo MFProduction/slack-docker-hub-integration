@@ -1,9 +1,17 @@
-FROM ruby:onbuild
+FROM ruby:alpine
 
-LABEL org.label-schema.vcs-url="https://github.com/wikiwi/slack-docker-hub-integration" \
-      org.label-schema.vendor=wikiwi.io \
-      org.label-schema.name=slack-docker-hub-integration \
-      io.wikiwi.license=MIT
+ENV APP_NAME app
+ENV APP_PATH /${APP_NAME}
+WORKDIR $APP_PATH
+
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache make g++ && \
+    rm -rf /var/cache/apk/*
+
+ADD . /app
+RUN gem install bundler && \
+    bundle install
 
 CMD rackup config.ru
 EXPOSE 9292
